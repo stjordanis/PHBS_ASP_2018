@@ -27,6 +27,7 @@ def basket_price_mc_cv(
         intr, divr, cp_sign, True, n_samples)
     
     #price2 = MC based on normal model
+    np.random.set_state(rand_st)
     price2 = basket_price_mc(
         strike, spot, vol*spot, weights, texp, cor_m,
         intr, divr, cp_sign, False, n_samples=10000)
